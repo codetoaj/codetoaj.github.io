@@ -1,9 +1,808 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Amalan Jenicious F | MERN stack developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Amalan Jenicious F — Software Engineer specializing in fullstack development. Portfolio of projects, skills and experience."
+    >
+    <title>Amalan Jenicious F | Software Engineer</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-alt: #111c33;
+        --card: #1e293b;
+        --border: #334155;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-2: #818cf8;
+        --grad: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        --radius: 14px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.1rem;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: 4px 0;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--text);
+      }
+      .nav-links a.active {
+        border-bottom: 2px solid var(--accent);
+      }
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      .hero {
+        padding: 96px 0 72px;
+        text-align: center;
+        background: radial-gradient(ellipse at top, #1e3a5f 0%, var(--bg) 60%);
+      }
+      .hero .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 24px;
+        background: var(--grad);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #0f172a;
+        box-shadow: var(--shadow);
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .hero .role {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 18px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.15);
+        color: var(--accent);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .hero .intro {
+        max-width: 640px;
+        margin: 20px auto 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+      .hero .intro strong {
+        color: var(--text);
+      }
+      .hero .cta {
+        margin-top: 28px;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn:hover {
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: var(--grad);
+        color: #0f172a;
+        box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+      }
+      .btn-ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+      }
+
+      section {
+        padding: 80px 0;
+      }
+      section:nth-of-type(even) {
+        background: var(--bg-alt);
+      }
+      .section-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+        margin-bottom: 8px;
+      }
+      .section-sub {
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+      .underline {
+        width: 48px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--grad);
+        margin-bottom: 32px;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      .skill-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+      }
+      .skill-card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: var(--accent);
+      }
+      .skill-card .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        background: rgba(129, 140, 248, 0.12);
+        border: 1px solid rgba(129, 140, 248, 0.3);
+        color: #c7d2fe;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .projects {
+        display: grid;
+        gap: 24px;
+      }
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+      }
+      .project-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .project-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .project-card .roles {
+        margin: 16px 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+      }
+      .project-card .roles li {
+        display: flex;
+        gap: 10px;
+        font-size: 0.92rem;
+        color: var(--text);
+      }
+      .project-card .roles li::before {
+        content: "\2022";
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .project-card .tech-label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent-2);
+        margin: 12px 0 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .project-card .tech-line {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .contact {
+        text-align: center;
+      }
+      .contact .section-title,
+      .contact .section-sub {
+        text-align: center;
+      }
+      .contact .underline {
+        margin: 0 auto 32px;
+      }
+      .contact p {
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto 28px;
+      }
+      .contact-links {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .contact-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px 28px;
+        min-width: 220px;
+        transition: transform 0.15s ease, border-color 0.15s ease;
+      }
+      .contact-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+      }
+      .contact-card .icon {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+      .contact-card .label {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .contact-card .value {
+        font-weight: 600;
+        font-size: 0.95rem;
+        word-break: break-all;
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 720px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          gap: 0;
+          background: var(--bg-alt);
+          border-bottom: 1px solid var(--border);
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links li {
+          border-top: 1px solid var(--border);
+        }
+        .nav-links a {
+          display: block;
+          padding: 16px 24px;
+        }
+        .nav-links a.active {
+          border-bottom: none;
+          color: var(--accent);
+        }
+        .menu-btn {
+          display: block;
+        }
+        .hero {
+          padding: 64px 0 48px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-  <script type="text/javascript" src="app.bundle.js"></script></body>
+    <header>
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#home">AJ</a>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="avatar" aria-hidden="true">AJ</div>
+        <h1>Amalan Jenicious F</h1>
+        <span class="role">Software Engineer</span>
+        <p class="intro">
+          Hi, I am a Computer Science Engineer specialized in
+          <strong>fullstack development</strong> from Tamilnadu, India. Currently working as a
+          Senior Software Engineer at
+          <a href="https://www.shenll.com/" target="_blank" rel="noopener noreferrer">Shenll Technology Solutions (P) Ltd</a>
+          at Chennai. Please check my
+          <a href="https://github.com/codetoaj?tab=repositories" target="_blank" rel="noopener noreferrer">Github Repos</a>
+          and feel free to give a star to interested projects. You can mail me to
+          <a href="mailto:codetoaj@gmail.com">codetoaj@gmail.com</a>.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#experience">View Projects</a>
+          <a class="btn btn-ghost" href="mailto:codetoaj@gmail.com">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="underline"></div>
+        <p class="section-sub">Technologies I work with across the full stack.</p>
+        <div class="skills">
+          <div class="skill-card">
+            <h3>Languages &amp; Frameworks</h3>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">Express</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Spring Security</span>
+              <span class="tag">Java</span>
+              <span class="tag">.NET Core</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Redux Toolkit</span>
+              <span class="tag">Redux-Saga</span>
+              <span class="tag">Material UI</span>
+              <span class="tag">Angular Material</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Webpack</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <div class="tags">
+              <span class="tag">REST APIs</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">JWT &amp; OAuth</span>
+              <span class="tag">Passport</span>
+              <span class="tag">bcrypt</span>
+              <span class="tag">Swagger/OpenAPI</span>
+              <span class="tag">Mongoose</span>
+              <span class="tag">Express Gateway</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Databases</h3>
+            <div class="tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">MongoDB Atlas</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Microsoft SQL Server</span>
+              <span class="tag">Oracle</span>
+              <span class="tag">Amazon Aurora</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Auth, Payments &amp; Notifications</h3>
+            <div class="tags">
+              <span class="tag">JWT Authentication</span>
+              <span class="tag">OTP Verification</span>
+              <span class="tag">Razorpay</span>
+              <span class="tag">Twilio SMS</span>
+              <span class="tag">Nodemailer</span>
+              <span class="tag">Firebase FCM</span>
+              <span class="tag">Email / SMS / Push</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>DevOps &amp; Tooling</h3>
+            <div class="tags">
+              <span class="tag">Docker</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">AWS (S3, RDS, FSx)</span>
+              <span class="tag">GCloud</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitLab CI</span>
+              <span class="tag">Jest</span>
+              <span class="tag">ESLint/Prettier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Project Experience</h2>
+        <div class="underline"></div>
+        <p class="section-sub">Projects I have designed and developed.</p>
+        <div class="projects">
+          <article class="project-card">
+            <h3>Megathil — Gamified Language-Learning Backend</h3>
+            <p>
+              Megathil is a gamified language-learning (Duolingo-style) backend REST API developed
+              for the Tamil language. It manages users, auth/roles, courses, modules, units, topics
+              and questions, plus a gamification layer (gems, trophies, badges, experience points,
+              achievements). It also supports LMS-style tests, interviews, college/course/state/city
+              lookup data, Razorpay payments, media uploads, certificates, contact/feedback forms and
+              a dashboard.
+            </p>
+            <ul class="roles">
+              <li>Built the backend as a monolith of ~60 feature modules under a global /api base path with JWT auth</li>
+              <li>Implemented auth/roles and the gamification layer (gems, trophies, badges, XP, achievements)</li>
+              <li>Integrated Razorpay payments, Twilio SMS, Nodemailer email and Firebase push notifications</li>
+              <li>Set up media uploads (S3/Cloudinary), certificate generation, Swagger docs and Jest + Supertest tests</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Framework:</strong> NestJS 10 (Node.js, TypeScript)
+            </div>
+            <div class="tech-line"><strong>Database:</strong> MongoDB via Mongoose 8</div>
+            <div class="tech-line"><strong>Auth:</strong> Passport (JWT + local), bcrypt</div>
+            <div class="tech-line"><strong>Payments:</strong> Razorpay</div>
+            <div class="tech-line">
+              <strong>Messaging/Email:</strong> Twilio (SMS), Nodemailer + @nestjs-modules/mailer
+            </div>
+            <div class="tech-line">
+              <strong>Files/Media:</strong> Multer (S3, Cloudinary), aws-sdk, canvas, qrcode, html-pdf,
+              xlsx, json2xls, csv-parser
+            </div>
+            <div class="tech-line">
+              <strong>Notifications:</strong> Firebase Admin (push), @nestjs/schedule (cron)
+            </div>
+            <div class="tech-line">
+              <strong>API docs &amp; Tests:</strong> Swagger (/api-docs), Jest + Supertest
+            </div>
+            <div class="tech-line"><strong>Infra:</strong> Docker, ESLint/Prettier</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Dubai Police — Sports Activity Management</h3>
+            <p>
+              The Dubai Police project oversees and enhances the sports activities of its employees,
+              managing participation across 28 distinct sports categories. It includes a dashboard,
+              staff management, athlete tracking, training plans and camps, events and competitions,
+              budget allocation, results and reports. The system also calculates Key Performance
+              Indicators (KPI) for each athlete, providing detailed analysis of their performance and
+              progress.
+            </p>
+            <ul class="roles">
+              <li>Built the frontend with Next.js 14, React 18 and Material-UI 6 using Redux Toolkit state management</li>
+              <li>Developed key modules: dashboard, staffs, athletes, training plans/camps, events, competitions, budget, results and reports</li>
+              <li>Implemented athlete KPI calculation for performance tracking and analysis</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Frontend:</strong> Next.js 14, React 18, Material-UI 6, TypeScript (TSX)
+            </div>
+            <div class="tech-line">
+              <strong>State &amp; Tooling:</strong> Redux Toolkit, Axios, Lodash, Moment, Jest,
+              React Dev Tools &amp; Redux Dev Tools
+            </div>
+            <div class="tech-line"><strong>Platform:</strong> Node.js 20.8, npm 10</div>
+            <div class="tech-line"><strong>Backend:</strong> .NET Core API</div>
+            <div class="tech-line"><strong>Database:</strong> Oracle (stored procedures)</div>
+            <div class="tech-line"><strong>Push Notifications:</strong> Firebase Cloud Messaging (FCM)</div>
+          </article>
+
+          <article class="project-card">
+            <h3>STE Land System — Supplier/Buyer Portal</h3>
+            <p>
+              A supplier/buyer portal for the STE Land System, built with an aesthetic UI and
+              uncompromised user experience. It lets suppliers and buyers register, interact,
+              exchange documents, collaborate and transact effectively for the sale and purchase of
+              lands.
+            </p>
+            <ul class="roles">
+              <li>Upgraded the project from Spring Boot 2.6.2 to Spring Boot 3.2.0</li>
+              <li>Upgraded Spring Security from 5.6.1 to 6.2.0</li>
+              <li>Migrated CORS implementation from filter flow to the Spring Security filter chain</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line"><strong>Frontend:</strong> Angular 15 (Node 18)</div>
+            <div class="tech-line">
+              <strong>Backend:</strong> Spring Boot 3.2, Spring Security 6.2, Tomcat 9.0, Oracle Java 19
+            </div>
+            <div class="tech-line">
+              <strong>Database:</strong> Microsoft SQL Server 2019 on AWS RDS
+            </div>
+            <div class="tech-line"><strong>Infrastructure:</strong> Nginx 1.24, Amazon FSx</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Boxfile — Auditing Application</h3>
+            <p>
+              Boxfile is a unified auditing platform that brings office, audit, billing and
+              timesheet applications together under a single sign-on, so teams can run their entire
+              engagement lifecycle in one place. As the frontend lead, I drove the Angular 17
+              development and contributed across multiple modules of the auditing application, from
+              audit workflows to billing and timesheet features.
+            </p>
+            <ul class="roles">
+              <li>Led the frontend development for the project</li>
+              <li>Worked on various modules of the auditing application</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line"><strong>Frontend:</strong> Angular 17, Angular Material</div>
+            <div class="tech-line"><strong>Backend:</strong> Spring Boot 2</div>
+            <div class="tech-line"><strong>Database:</strong> MySQL</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Elite API — Community Platform Backend</h3>
+            <p>
+              Elite API is a Node.js/Express RESTful backend for the "Elite" community platform — a
+              membership + matrimony service for a Tamil (Sengunthar) community organization. It
+              manages registered members, matrimonial profiles, business listings, chat, news/events,
+              banners, galleries, live streams, districts/states and admin operations, with
+              authentication, OTP verification, file uploads, email/SMS/push notifications and
+              Swagger documentation.
+            </p>
+            <ul class="roles">
+              <li>Built a feature-component architecture under src/components/* with routes mounted at /api/v1/&lt;component&gt;</li>
+              <li>Implemented authentication, OTP verification and JWT-secured APIs</li>
+              <li>Integrated email/SMS/push notifications via Nodemailer, Twilio/Msg91 and Firebase FCM</li>
+              <li>Set up AWS S3 file uploads, Swagger docs, Docker image and GitLab CI build pipeline</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Backend:</strong> Node.js 12, Express 4, Mongoose 5 (MongoDB Atlas)
+            </div>
+            <div class="tech-line">
+              <strong>Auth &amp; Security:</strong> JWT, bcrypt, rand-token, @hapi/joi
+            </div>
+            <div class="tech-line">
+              <strong>Integrations:</strong> Firebase FCM, Twilio + Msg91 (OTP/SMS), AWS SDK + multer-s3 (S3),
+              Nodemailer (EJS templates), node-cron
+            </div>
+            <div class="tech-line">
+              <strong>Tooling:</strong> Swagger UI Express, ESLint (standard), Docker (Node 12, port 8080),
+              GitLab CI, husky + lint-staged
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>CRVS — Civil Registration and Vital Status for Rwandan Government</h3>
+            <p>
+              Civil registration application developed for the Government of Rwanda to register
+              Birth, Death, Marriage and Divorce records. A notifier can register a record and apply
+              for certification; records are then verified by a registerer and approved for
+              certification. A super admin controls all notifiers and registerers, and all
+              authorised users can view registration reports and statistics.
+            </p>
+            <ul class="roles">
+              <li>Super Admin dashboard design and development</li>
+              <li>User management module design and development</li>
+              <li>Birth module design and development</li>
+              <li>Material theme integration</li>
+              <li>Redux-Saga configuration</li>
+              <li>UI development and API integrations</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Frontend:</strong> React 16.8.3 with react-boilerplate, redux-saga 1.0.2,
+              Material UI 4.7.0, Webpack 4.30.0
+            </div>
+            <div class="tech-line">
+              <strong>Backend:</strong> Node 12, Express 4.7, Express Gateway 1.16.3
+            </div>
+            <div class="tech-line"><strong>Database:</strong> MongoDB 5.4</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Stork (Bodywell) — Healthcare Appointment Booking System for US client</h3>
+            <p>
+              Bodywell is an appointment booking system for physiotherapy and massage services in the
+              US. It consists of three frontend applications and a microservice API backend. A super
+              admin dashboard (Angular) creates appointments with therapists; a separate manager
+              dashboard (React) controls all users including therapists and customers; and therapists
+              get a React dashboard to manage availability and view appointments.
+            </p>
+            <ul class="roles">
+              <li>Implemented authentication module</li>
+              <li>Appointment notifications (Email/SMS/Push) implementation</li>
+              <li>Swagger documentation</li>
+              <li>UI development and API integrations</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Frontend:</strong> React 16.7.0 with Next 9.3.0, react-redux 5.0.1,
+              Material UI 3.9.2, Angular 10.0.6 with Material 10.1.2
+            </div>
+            <div class="tech-line"><strong>Backend:</strong> Node 10, Express 4.11.2 with GCloud</div>
+            <div class="tech-line"><strong>Database:</strong> MongoDB 5.4 with MLab</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Liquor Capital — Ecommerce Site for Online Liquor Sales</h3>
+            <p>
+              Liquor Capital has both an admin panel and an ecommerce site for managing and selling
+              liquors online. The admin panel is a multi-merchant concept managed by a super admin,
+              where a single product can have multiple variants created by different merchants. The
+              system also supports a multi-database concept where a single codebase acts as two
+              frontend applications with different databases.
+            </p>
+            <ul class="roles">
+              <li>Custom SEO handler implementation for React frontend</li>
+              <li>Product search module design and API integration</li>
+              <li>Product page design and API integration</li>
+              <li>Multi database support based on domain configuration</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line">
+              <strong>Frontend:</strong> React 16.9.0, react-redux 7.1.1, react-bootstrap 1.1.0
+            </div>
+            <div class="tech-line"><strong>Backend:</strong> Node 10, Express 4.17.1</div>
+            <div class="tech-line"><strong>Database:</strong> Amazon Aurora</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="underline"></div>
+        <p class="section-sub">Let's build something together.</p>
+        <p>
+          I'm always open to discussing new projects, collaboration opportunities and
+          interesting ideas. Feel free to reach out.
+        </p>
+        <div class="contact-links">
+          <a class="contact-card" href="mailto:codetoaj@gmail.com">
+            <span class="icon">&#9993;</span>
+            <span class="label">Email</span>
+            <span class="value">codetoaj@gmail.com</span>
+          </a>
+          <a class="contact-card" href="https://github.com/codetoaj" target="_blank" rel="noopener noreferrer">
+            <span class="icon">&#128187;</span>
+            <span class="label">GitHub</span>
+            <span class="value">github.com/codetoaj</span>
+          </a>
+          <a class="contact-card" href="https://www.shenll.com/" target="_blank" rel="noopener noreferrer">
+            <span class="icon">&#127970;</span>
+            <span class="label">Company</span>
+            <span class="value">Shenll Technology Solutions</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; <span id="year"></span> Amalan Jenicious F · Software Engineer
+      </div>
+    </footer>
+
+    <script>
+      var menuBtn = document.getElementById("menuBtn");
+      var navLinks = document.getElementById("navLinks");
+      menuBtn.addEventListener("click", function () {
+        var open = navLinks.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      document.querySelectorAll("#navLinks a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      var sections = document.querySelectorAll("section[id]");
+      var navAnchors = document.querySelectorAll("#navLinks a");
+      window.addEventListener("scroll", function () {
+        var pos = window.scrollY + 120;
+        var current = sections[0] ? sections[0].id : "";
+        sections.forEach(function (s) {
+          if (pos >= s.offsetTop) current = s.id;
+        });
+        navAnchors.forEach(function (a) {
+          a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
