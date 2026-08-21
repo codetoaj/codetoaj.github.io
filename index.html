@@ -15,6 +15,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     >
+    <meta property="og:title" content="Amalan Jenicious F | Software Engineer">
+    <meta property="og:description" content="Senior Software Engineer specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codetoaj.github.io/">
+    <meta property="og:image" content="https://codetoaj.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amalan Jenicious F | Software Engineer">
+    <meta name="twitter:description" content="Senior Software Engineer specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
+    <meta name="twitter:image" content="https://codetoaj.github.io/og-image.png">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Amalan Jenicious F","jobTitle":"Senior Software Engineer","worksFor":{"@type":"Organization","name":"Shenll Technology Solutions"},"url":"https://codetoaj.github.io/","sameAs":["https://github.com/codetoaj"]}
+    </script>
     <style>
       :root {
         --bg: #0f172a;
@@ -242,6 +254,32 @@
         display: grid;
         gap: 24px;
       }
+      .project-filters {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 8px 20px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .filter-btn:hover {
+        border-color: var(--accent);
+        color: var(--text);
+      }
+      .filter-btn.active {
+        background: var(--grad);
+        border-color: transparent;
+        color: #0f172a;
+      }
       .project-card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -350,6 +388,42 @@
         text-align: center;
         color: var(--muted);
         font-size: 0.85rem;
+      }
+
+      .scroll-top {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--grad);
+        border: none;
+        color: #0f172a;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(16px);
+        transition: all 0.3s ease;
+        z-index: 99;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      .scroll-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .scroll-top:hover {
+        transform: translateY(-4px) scale(1.05);
+      }
+      .scroll-top:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
 
       @media (max-width: 720px) {
@@ -517,7 +591,14 @@
         <div class="underline"></div>
         <p class="section-sub">Projects I have designed and developed.</p>
         <div class="projects">
-          <article class="project-card">
+          <div class="project-filters" role="tablist" aria-label="Project categories">
+            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="react">React</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="nextjs">Next.js</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="nestjs">NestJS</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="springboot">Spring Boot</button>
+          </div>
+          <article class="project-card" data-category="nestjs">
             <h3>Megathil — Gamified Language-Learning Backend</h3>
             <p>
               Megathil is a gamified language-learning (Duolingo-style) backend REST API developed
@@ -556,7 +637,7 @@
             <div class="tech-line"><strong>Infra:</strong> Docker, ESLint/Prettier</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="nextjs">
             <h3>Dubai Police — Sports Activity Management</h3>
             <p>
               The Dubai Police project oversees and enhances the sports activities of its employees,
@@ -585,7 +666,7 @@
             <div class="tech-line"><strong>Push Notifications:</strong> Firebase Cloud Messaging (FCM)</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="springboot">
             <h3>STE Land System — Supplier/Buyer Portal</h3>
             <p>
               A supplier/buyer portal for the STE Land System, built with an aesthetic UI and
@@ -609,7 +690,7 @@
             <div class="tech-line"><strong>Infrastructure:</strong> Nginx 1.24, Amazon FSx</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="springboot">
             <h3>Boxfile — Auditing Application</h3>
             <p>
               Boxfile is a unified auditing platform that brings office, audit, billing and
@@ -628,7 +709,7 @@
             <div class="tech-line"><strong>Database:</strong> MySQL</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="nestjs">
             <h3>Elite API — Community Platform Backend</h3>
             <p>
               Elite API is a Node.js/Express RESTful backend for the "Elite" community platform — a
@@ -661,7 +742,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="react">
             <h3>CRVS — Civil Registration and Vital Status for Rwandan Government</h3>
             <p>
               Civil registration application developed for the Government of Rwanda to register
@@ -689,7 +770,7 @@
             <div class="tech-line"><strong>Database:</strong> MongoDB 5.4</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="react">
             <h3>Stork (Bodywell) — Healthcare Appointment Booking System for US client</h3>
             <p>
               Bodywell is an appointment booking system for physiotherapy and massage services in the
@@ -713,7 +794,7 @@
             <div class="tech-line"><strong>Database:</strong> MongoDB 5.4 with MLab</div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="react">
             <h3>Liquor Capital — Ecommerce Site for Online Liquor Sales</h3>
             <p>
               Liquor Capital has both an admin panel and an ecommerce site for managing and selling
@@ -777,16 +858,63 @@
     <script>
       var menuBtn = document.getElementById("menuBtn");
       var navLinks = document.getElementById("navLinks");
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var firstFocusable;
+      var lastFocusable;
+
+      function openMenu() {
+        navLinks.classList.add("open");
+        menuBtn.setAttribute("aria-expanded", "true");
+        var focusables = navLinks.querySelectorAll(focusableElements);
+        firstFocusable = focusables[0];
+        lastFocusable = focusables[focusables.length - 1];
+        firstFocusable?.focus();
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.focus();
+        document.body.style.overflow = "";
+      }
+
       menuBtn.addEventListener("click", function () {
         var open = navLinks.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
       });
 
       document.querySelectorAll("#navLinks a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          navLinks.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("click", function (e) {
+        if (navLinks.classList.contains("open") && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (!navLinks.classList.contains("open")) return;
+        if (e.key === "Escape") {
+          closeMenu();
+        }
+        if (e.key === "Tab") {
+          var focusables = navLinks.querySelectorAll(focusableElements);
+          firstFocusable = focusables[0];
+          lastFocusable = focusables[focusables.length - 1];
+          if (e.shiftKey && document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable?.focus();
+          } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable?.focus();
+          }
+        }
       });
 
       var sections = document.querySelectorAll("section[id]");
@@ -803,6 +931,51 @@
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Scroll to top button
+      var filterBtns = document.querySelectorAll(".filter-btn");
+      var projectCards = document.querySelectorAll(".project-card");
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var filter = btn.getAttribute("data-filter");
+          filterBtns.forEach(function (b) {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+          projectCards.forEach(function (card) {
+            var category = card.getAttribute("data-category");
+            if (filter === "all" || category === filter) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+</script>
+  <button class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+    &#8593;
+  </button>
+
+  <script>
+      var scrollTopBtn = document.querySelector(".scroll-top");
+      window.addEventListener("scroll", function () {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (scroll > 300) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
     </script>
-  </body>
+</body>
 </html>
