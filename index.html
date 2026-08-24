@@ -16,16 +16,16 @@
       rel="stylesheet"
     >
     <meta property="og:title" content="Amalan Jenicious F | Software Engineer">
-    <meta property="og:description" content="Senior Software Engineer specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
+    <meta property="og:description" content="Team Lead specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://codetoaj.github.io/">
     <meta property="og:image" content="https://codetoaj.github.io/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Amalan Jenicious F | Software Engineer">
-    <meta name="twitter:description" content="Senior Software Engineer specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
+    <meta name="twitter:description" content="Team Lead specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
     <meta name="twitter:image" content="https://codetoaj.github.io/og-image.png">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Amalan Jenicious F","jobTitle":"Senior Software Engineer","worksFor":{"@type":"Organization","name":"Shenll Technology Solutions"},"url":"https://codetoaj.github.io/","sameAs":["https://github.com/codetoaj"]}
+    {"@context":"https://schema.org","@type":"Person","name":"Amalan Jenicious F","jobTitle":"Team Lead","worksFor":{"@type":"Organization","name":"Shenll Technology Solutions"},"url":"https://codetoaj.github.io/","sameAs":["https://github.com/codetoaj"]}
     </script>
     <style>
       :root {
@@ -426,6 +426,103 @@
         outline-offset: 2px;
       }
 
+      /* ===== Work Experience Timeline ===== */
+      .timeline {
+        position: relative;
+        padding-left: 80px;
+        margin-top: 8px;
+      }
+      .timeline-rail {
+        position: absolute;
+        left: 49px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--border);
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: 40px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--grad);
+        border: 4px solid var(--bg);
+        box-shadow: 0 0 0 2px var(--border);
+      }
+      .timeline-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .timeline-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+      }
+      .timeline-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .timeline-head h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+      .timeline-role {
+        display: block;
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 0.92rem;
+        margin-top: 2px;
+      }
+      .timeline-date {
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-weight: 600;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        padding: 4px 14px;
+        border-radius: 999px;
+      }
+      .timeline-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 14px 0;
+        display: grid;
+        gap: 8px;
+      }
+      .timeline-bullets li {
+        display: flex;
+        gap: 10px;
+        font-size: 0.92rem;
+        color: var(--text);
+        align-items: flex-start;
+      }
+      .timeline-bullets li::before {
+        content: "\2022";
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .timeline-tech {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
       @media (max-width: 720px) {
         .nav-links {
           display: none;
@@ -458,6 +555,18 @@
         .hero {
           padding: 64px 0 48px;
         }
+        .timeline {
+          padding-left: 44px;
+        }
+        .timeline-rail {
+          left: 15px;
+        }
+        .timeline-dot {
+          left: 6px;
+        }
+        .timeline-head h3 {
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
@@ -470,6 +579,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -482,16 +592,16 @@
         <span class="role">Software Engineer</span>
         <p class="intro">
           Hi, I am a Computer Science Engineer specialized in
-          <strong>fullstack development</strong> from Tamilnadu, India. Currently working as a
-          Senior Software Engineer at
+          <strong>fullstack development</strong> from Tamil Nadu, India. Currently working as a
+          Team Lead at
           <a href="https://www.shenll.com/" target="_blank" rel="noopener noreferrer">Shenll Technology Solutions (P) Ltd</a>
-          at Chennai. Please check my
-          <a href="https://github.com/codetoaj?tab=repositories" target="_blank" rel="noopener noreferrer">Github Repos</a>
-          and feel free to give a star to interested projects. You can mail me to
+          in Chennai. Please check my
+          <a href="https://github.com/codetoaj?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub Repos</a>
+          and feel free to give a star to projects you find interesting. You can email me at
           <a href="mailto:codetoaj@gmail.com">codetoaj@gmail.com</a>.
         </p>
         <div class="cta">
-          <a class="btn btn-primary" href="#experience">View Projects</a>
+          <a class="btn btn-primary" href="#projects">View Projects</a>
           <a class="btn btn-ghost" href="mailto:codetoaj@gmail.com">Contact Me</a>
         </div>
       </div>
@@ -587,16 +697,172 @@
 
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Project Experience</h2>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="underline"></div>
+        <p class="section-sub">My career journey across companies and roles.</p>
+        <div class="timeline">
+          <div class="timeline-rail"></div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Shenll Technology Solutions</h3>
+                    <span class="timeline-role">Team Lead</span>
+                  </div>
+                  <span class="timeline-date">2023 – Present</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Planning and designing Next.js and NestJS application structure.</li>
+                  <li>Project requirement gathering, module planning, timeline estimations.</li>
+                  <li>Team management and task assignment.</li>
+                  <li>Code review and server setup &amp; deployments.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">Next.js</span>
+                  <span class="tag">NestJS</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">AWS</span>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Shenll Technology Solutions</h3>
+                    <span class="timeline-role">Senior Associate</span>
+                  </div>
+                  <span class="timeline-date">2020 – 2022</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Developed fullstack applications with React, Angular, Express and Node.js.</li>
+                  <li>Developed and upgraded Spring Boot applications.</li>
+                  <li>Developed fullstack application with Next.js &amp; NestJS.</li>
+                  <li>Planning and designing fullstack codebase &amp; DB.</li>
+                  <li>Code review and deployments.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">React</span>
+                  <span class="tag">Angular</span>
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">Next.js</span>
+                  <span class="tag">NestJS</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">Node.js</span>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Shenll Technology Solutions</h3>
+                    <span class="timeline-role">Associate</span>
+                  </div>
+                  <span class="timeline-date">2017 – 2019</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Developed frontend applications with Angular &amp; React.</li>
+                  <li>Developed mobile apps with Ionic and React Native.</li>
+                  <li>Developed APIs with Express &amp; Node.js.</li>
+                  <li>Structured project setup.</li>
+                  <li>Performed code reviews and deployments.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">Angular</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Ionic</span>
+                  <span class="tag">React Native</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">Node.js</span>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>iSysway Technologies</h3>
+                    <span class="timeline-role">Manager &amp; Java Trainer</span>
+                  </div>
+                  <span class="timeline-date">2015 – 2016</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Conducted a seminar on Ethical Hacking.</li>
+                  <li>Supported research paper writing for PhD scholars.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">Java</span>
+                  <span class="tag">Ethical Hacking</span>
+                  <span class="tag">Linux</span>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>iSysway Technologies</h3>
+                    <span class="timeline-role">Java Trainer</span>
+                  </div>
+                  <span class="timeline-date">2014</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Provided training to students on C, C++, Java and the Linux environment.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">C</span>
+                  <span class="tag">C++</span>
+                  <span class="tag">Java</span>
+                  <span class="tag">Linux</span>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3>iSysway Technologies</h3>
+                    <span class="timeline-role">C, C++ &amp; Hardware Trainer</span>
+                  </div>
+                  <span class="timeline-date">2013</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Provided training to students on C, C++ &amp; basic hardware.</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tag">C</span>
+                  <span class="tag">C++</span>
+                  <span class="tag">Hardware</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
         <div class="underline"></div>
         <p class="section-sub">Projects I have designed and developed.</p>
         <div class="projects">
-          <div class="project-filters" role="tablist" aria-label="Project categories">
-            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
-            <button class="filter-btn" role="tab" aria-selected="false" data-filter="react">React</button>
-            <button class="filter-btn" role="tab" aria-selected="false" data-filter="nextjs">Next.js</button>
-            <button class="filter-btn" role="tab" aria-selected="false" data-filter="nestjs">NestJS</button>
-            <button class="filter-btn" role="tab" aria-selected="false" data-filter="springboot">Spring Boot</button>
+          <div class="project-filters" role="group" aria-label="Project categories">
+            <button type="button" class="filter-btn active" aria-pressed="true" data-filter="all">All</button>
+            <button type="button" class="filter-btn" aria-pressed="false" data-filter="react">React</button>
+            <button type="button" class="filter-btn" aria-pressed="false" data-filter="nextjs">Next.js</button>
+            <button type="button" class="filter-btn" aria-pressed="false" data-filter="nestjs">NestJS</button>
+            <button type="button" class="filter-btn" aria-pressed="false" data-filter="springboot">Spring Boot</button>
+            <button type="button" class="filter-btn" aria-pressed="false" data-filter="angular">Angular</button>
           </div>
           <article class="project-card" data-category="nestjs">
             <h3>Megathil — Gamified Language-Learning Backend</h3>
@@ -666,13 +932,13 @@
             <div class="tech-line"><strong>Push Notifications:</strong> Firebase Cloud Messaging (FCM)</div>
           </article>
 
-          <article class="project-card" data-category="springboot">
+          <article class="project-card" data-category="springboot angular">
             <h3>STE Land System — Supplier/Buyer Portal</h3>
             <p>
               A supplier/buyer portal for the STE Land System, built with an aesthetic UI and
-              uncompromised user experience. It lets suppliers and buyers register, interact,
+              uncompromising user experience. It lets suppliers and buyers register, interact,
               exchange documents, collaborate and transact effectively for the sale and purchase of
-              lands.
+              land.
             </p>
             <ul class="roles">
               <li>Upgraded the project from Spring Boot 2.6.2 to Spring Boot 3.2.0</li>
@@ -690,7 +956,7 @@
             <div class="tech-line"><strong>Infrastructure:</strong> Nginx 1.24, Amazon FSx</div>
           </article>
 
-          <article class="project-card" data-category="springboot">
+          <article class="project-card" data-category="springboot angular">
             <h3>Boxfile — Auditing Application</h3>
             <p>
               Boxfile is a unified auditing platform that brings office, audit, billing and
@@ -743,13 +1009,13 @@
           </article>
 
           <article class="project-card" data-category="react">
-            <h3>CRVS — Civil Registration and Vital Status for Rwandan Government</h3>
+            <h3>CRVS — Civil Registration and Vital Statistics for the Rwandan Government</h3>
             <p>
               Civil registration application developed for the Government of Rwanda to register
               Birth, Death, Marriage and Divorce records. A notifier can register a record and apply
-              for certification; records are then verified by a registerer and approved for
-              certification. A super admin controls all notifiers and registerers, and all
-              authorised users can view registration reports and statistics.
+              for certification; records are then verified by a registrar and approved for
+              certification. A super admin controls all notifiers and registrars, and all
+              authorized users can view registration reports and statistics.
             </p>
             <ul class="roles">
               <li>Super Admin dashboard design and development</li>
@@ -770,8 +1036,8 @@
             <div class="tech-line"><strong>Database:</strong> MongoDB 5.4</div>
           </article>
 
-          <article class="project-card" data-category="react">
-            <h3>Stork (Bodywell) — Healthcare Appointment Booking System for US client</h3>
+          <article class="project-card" data-category="react angular">
+            <h3>Stork (Bodywell) — Healthcare Appointment Booking System for a US client</h3>
             <p>
               Bodywell is an appointment booking system for physiotherapy and massage services in the
               US. It consists of three frontend applications and a microservice API backend. A super
@@ -807,7 +1073,7 @@
               <li>Custom SEO handler implementation for React frontend</li>
               <li>Product search module design and API integration</li>
               <li>Product page design and API integration</li>
-              <li>Multi database support based on domain configuration</li>
+              <li>Multi-database support based on domain configuration</li>
             </ul>
             <div class="tech-label">Technologies used</div>
             <div class="tech-line">
@@ -855,6 +1121,10 @@
       </div>
     </footer>
 
+    <button class="scroll-top" type="button" aria-label="Scroll to top" title="Scroll to top">
+      &#8593;
+    </button>
+
     <script>
       var menuBtn = document.getElementById("menuBtn");
       var navLinks = document.getElementById("navLinks");
@@ -869,14 +1139,12 @@
         firstFocusable = focusables[0];
         lastFocusable = focusables[focusables.length - 1];
         firstFocusable?.focus();
-        document.body.style.overflow = "hidden";
       }
 
-      function closeMenu() {
+      function closeMenu(refocus) {
         navLinks.classList.remove("open");
         menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.focus();
-        document.body.style.overflow = "";
+        if (refocus === true) menuBtn.focus();
       }
 
       menuBtn.addEventListener("click", function () {
@@ -901,7 +1169,7 @@
       document.addEventListener("keydown", function (e) {
         if (!navLinks.classList.contains("open")) return;
         if (e.key === "Escape") {
-          closeMenu();
+          closeMenu(true);
         }
         if (e.key === "Tab") {
           var focusables = navLinks.querySelectorAll(focusableElements);
@@ -919,6 +1187,8 @@
 
       var sections = document.querySelectorAll("section[id]");
       var navAnchors = document.querySelectorAll("#navLinks a");
+      var scrollTopBtn = document.querySelector(".scroll-top");
+
       window.addEventListener("scroll", function () {
         var pos = window.scrollY + 120;
         var current = sections[0] ? sections[0].id : "";
@@ -928,11 +1198,12 @@
         navAnchors.forEach(function (a) {
           a.classList.toggle("active", a.getAttribute("href") === "#" + current);
         });
-      });
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        scrollTopBtn.classList.toggle("visible", y > 300);
+      }, { passive: true });
 
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Scroll to top button
       var filterBtns = document.querySelectorAll(".filter-btn");
       var projectCards = document.querySelectorAll(".project-card");
       filterBtns.forEach(function (btn) {
@@ -940,13 +1211,13 @@
           var filter = btn.getAttribute("data-filter");
           filterBtns.forEach(function (b) {
             b.classList.remove("active");
-            b.setAttribute("aria-selected", "false");
+            b.setAttribute("aria-pressed", "false");
           });
           btn.classList.add("active");
-          btn.setAttribute("aria-selected", "true");
+          btn.setAttribute("aria-pressed", "true");
           projectCards.forEach(function (card) {
             var category = card.getAttribute("data-category");
-            if (filter === "all" || category === filter) {
+            if (filter === "all" || (category && category.split(" ").includes(filter))) {
               card.style.display = "";
             } else {
               card.style.display = "none";
@@ -954,22 +1225,7 @@
           });
         });
       });
-</script>
-  <button class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
-    &#8593;
-  </button>
-
-  <script>
-      var scrollTopBtn = document.querySelector(".scroll-top");
-      window.addEventListener("scroll", function () {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (scroll > 300) {
-          scrollTopBtn.classList.add("visible");
-        } else {
-          scrollTopBtn.classList.remove("visible");
-        }
-      });
-
+      // Scroll-to-top button
       scrollTopBtn.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
