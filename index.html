@@ -555,6 +555,9 @@
         padding-left: 80px;
         margin-top: 8px;
       }
+      .timeline-list {
+        list-style: none;
+      }
       .timeline-rail {
         position: absolute;
         left: 49px;
@@ -644,6 +647,53 @@
         gap: 6px;
         flex-wrap: wrap;
         margin-top: 8px;
+      }
+
+      /* ===== Experience timeline variant ===== */
+      #experience .timeline {
+        padding-left: 88px;
+        counter-reset: step;
+      }
+      #experience .timeline-rail {
+        left: 30px;
+        background-color: var(--border);
+        background-image: var(--grad);
+        background-repeat: no-repeat;
+        background-size: 100% 0%;
+        transition: background-size 0.15s linear;
+      }
+      #experience .timeline-dot {
+        display: none;
+      }
+      #experience .timeline-item {
+        counter-increment: step;
+      }
+      #experience .timeline-item::before {
+        content: counter(step, decimal-leading-zero);
+        position: absolute;
+        left: -75px;
+        top: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--grad);
+        color: #0f172a;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(56, 189, 248, 0.25);
+      }
+      #experience .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: -39px;
+        top: 33px;
+        width: 39px;
+        height: 2px;
+        background: var(--border);
       }
 
       /* ===== Animations ===== */
@@ -774,6 +824,24 @@
         .timeline-head h3 {
           font-size: 0.95rem;
         }
+        #experience .timeline {
+          padding-left: 56px;
+        }
+        #experience .timeline-rail {
+          left: 19px;
+        }
+        #experience .timeline-item::before {
+          left: -51px;
+          top: 12px;
+          width: 30px;
+          height: 30px;
+          font-size: 0.68rem;
+        }
+        #experience .timeline-item::after {
+          left: -21px;
+          top: 26px;
+          width: 21px;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         html {
@@ -790,6 +858,9 @@
         html.js .underline.reveal {
           opacity: 1;
           transform: none;
+          transition: none;
+        }
+        #experience .timeline-rail {
           transition: none;
         }
         .btn-primary:hover {
@@ -1137,7 +1208,7 @@
             <div class="tech-line"><strong>Infra:</strong> Docker, ESLint/Prettier</div>
           </article>
 
-          <article class="project-card reveal" data-category="nextjs">
+<article class="project-card reveal" data-category="nextjs">
             <h3>Dubai Police — Sports Activity Management</h3>
             <p>
               The Dubai Police project oversees and enhances the sports activities of its employees,
@@ -1166,7 +1237,7 @@
             <div class="tech-line"><strong>Push Notifications:</strong> Firebase Cloud Messaging (FCM)</div>
           </article>
 
-          <article class="project-card reveal" data-category="springboot angular">
+<article class="project-card reveal" data-category="springboot angular">
             <h3>STE Land System — Supplier/Buyer Portal</h3>
             <p>
               A supplier/buyer portal for the STE Land System, built with an aesthetic UI and
@@ -1190,7 +1261,7 @@
             <div class="tech-line"><strong>Infrastructure:</strong> Nginx 1.24, Amazon FSx</div>
           </article>
 
-          <article class="project-card reveal" data-category="springboot angular">
+<article class="project-card reveal" data-category="springboot angular">
             <h3>Boxfile — Auditing Application</h3>
             <p>
               Boxfile is a unified auditing platform that brings office, audit, billing and
@@ -1209,7 +1280,7 @@
             <div class="tech-line"><strong>Database:</strong> MySQL</div>
           </article>
 
-          <article class="project-card reveal" data-category="nestjs">
+<article class="project-card reveal" data-category="nestjs">
             <h3>Elite API — Community Platform Backend</h3>
             <p>
               Elite API is a Node.js/Express RESTful backend for the "Elite" community platform — a
@@ -1242,7 +1313,7 @@
             </div>
           </article>
 
-          <article class="project-card reveal" data-category="react">
+<article class="project-card reveal" data-category="react">
             <h3>CRVS — Civil Registration and Vital Statistics for the Rwandan Government</h3>
             <p>
               Civil registration application developed for the Government of Rwanda to register
@@ -1270,7 +1341,7 @@
             <div class="tech-line"><strong>Database:</strong> MongoDB 5.4</div>
           </article>
 
-          <article class="project-card reveal" data-category="react angular">
+<article class="project-card reveal" data-category="react angular">
             <h3>Stork (Bodywell) — Healthcare Appointment Booking System for a US client</h3>
             <p>
               Bodywell is an appointment booking system for physiotherapy and massage services in the
@@ -1294,7 +1365,7 @@
             <div class="tech-line"><strong>Database:</strong> MongoDB 5.4 with MLab</div>
           </article>
 
-          <article class="project-card reveal" data-category="react">
+<article class="project-card reveal" data-category="react">
             <h3>Liquor Capital — Ecommerce Site for Online Liquor Sales</h3>
             <p>
               Liquor Capital has both an admin panel and an ecommerce site for managing and selling
@@ -1316,7 +1387,25 @@
             <div class="tech-line"><strong>Backend:</strong> Node 10, Express 4.17.1</div>
             <div class="tech-line"><strong>Database:</strong> Amazon Aurora</div>
           </article>
-        </div>
+
+<article class="project-card reveal" data-category="angular">
+            <h3>YuuSports — Social Media &amp; Shopping Platform for Sports Players</h3>
+            <p>
+              YuuSports is a mobile application that combines a social media and shopping platform
+              for sports players. Players can buy quality sports products, share posts and build a
+              community among other sports players.
+            </p>
+            <ul class="roles">
+              <li>Project setup with Pug template configuration</li>
+              <li>Application theme and UI designs</li>
+              <li>Designed major pages like posts and view post comments</li>
+              <li>Products, product details and cart pages</li>
+              <li>Payment integration</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line"><strong>Framework:</strong> Ionic 3 (Angular)</div>
+            <div class="tech-line"><strong>Payments:</strong> Stripe</div>
+          </article>        </div>
       </div>
     </section>
 
@@ -1422,6 +1511,18 @@
       var sections = document.querySelectorAll("section[id]");
       var navAnchors = document.querySelectorAll("#navLinks a");
       var scrollTopBtn = document.querySelector(".scroll-top");
+      var timelineRail = document.querySelector("#experience .timeline-rail");
+
+      function updateProjectsRail() {
+        if (!timelineRail) return;
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        var rect = timelineRail.getBoundingClientRect();
+        var passed = Math.min(Math.max(vh * 0.6 - rect.top, 0), rect.height);
+        timelineRail.style.backgroundSize =
+          "100% " + (rect.height ? Math.round((passed / rect.height) * 100) : 0) + "%";
+      }
+
+      window.addEventListener("resize", updateProjectsRail, { passive: true });
 
       window.addEventListener("scroll", function () {
         var pos = window.scrollY + 120;
@@ -1434,6 +1535,7 @@
         });
         var y = window.pageYOffset || document.documentElement.scrollTop;
         scrollTopBtn.classList.toggle("visible", y > 300);
+        updateProjectsRail();
       }, { passive: true });
 
       document.getElementById("year").textContent = new Date().getFullYear();
@@ -1520,6 +1622,8 @@
           el.classList.add("visible");
         });
       }
+
+      updateProjectsRail();
     </script>
 </body>
 </html>
