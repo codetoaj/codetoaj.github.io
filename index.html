@@ -523,7 +523,6 @@
         background: var(--grad);
         border: none;
         color: #0f172a;
-        font-size: 1.5rem;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
@@ -534,7 +533,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        line-height: 1;
+      }
+      .scroll-top svg {
+        display: block;
       }
       .scroll-top.visible {
         opacity: 1;
@@ -1389,6 +1390,24 @@
           </article>
 
 <article class="project-card reveal" data-category="angular">
+            <h3>YuuGive — Affiliate Ecommerce App Supporting Child Care Organizations</h3>
+            <p>
+              YuuGive is a mobile application built as an affiliate based ecommerce platform
+              connected to popular ecommerce sites including Amazon. Users can shop through
+              affiliate links, and the earnings generated through the app are donated to child
+              care organizations.
+            </p>
+            <ul class="roles">
+              <li>Project setup with Pug template configuration</li>
+              <li>Application theme and UI designs</li>
+              <li>Affiliate integrations with popular ecommerce sites including Amazon</li>
+              <li>In-app earnings tracking and donation flow to child care organizations</li>
+            </ul>
+            <div class="tech-label">Technologies used</div>
+            <div class="tech-line"><strong>Framework:</strong> Ionic 3 (Angular)</div>
+          </article>
+
+<article class="project-card reveal" data-category="angular">
             <h3>YuuSports — Social Media &amp; Shopping Platform for Sports Players</h3>
             <p>
               YuuSports is a mobile application that combines a social media and shopping platform
@@ -1445,7 +1464,9 @@
     </footer>
 
     <button class="scroll-top" type="button" aria-label="Scroll to top" title="Scroll to top">
-      &#8593;
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 14l6-6 6 6" />
+      </svg>
     </button>
 
     <script>
