@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
     <meta
       name="description"
       content="Amalan Jenicious F — Software Engineer specializing in fullstack development. Portfolio of projects, skills and experience."
@@ -27,8 +28,21 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Person","name":"Amalan Jenicious F","jobTitle":"Team Lead","worksFor":{"@type":"Organization","name":"Shenll Technology Solutions"},"url":"https://codetoaj.github.io/","sameAs":["https://github.com/codetoaj"]}
     </script>
+    <script>
+      (function () {
+        var stored = null;
+        try { stored = localStorage.getItem("theme"); } catch (err) {}
+        var theme = stored === "light" || stored === "dark"
+          ? stored
+          : window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <style>
       :root {
+        color-scheme: dark;
         --bg: #0f172a;
         --bg-alt: #111c33;
         --card: #1e293b;
@@ -40,6 +54,36 @@
         --grad: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
         --radius: 14px;
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --header-bg: rgba(15, 23, 42, 0.85);
+        --hero-glow: #1e3a5f;
+        --pill-bg: rgba(56, 189, 248, 0.15);
+        --pill-border: rgba(56, 189, 248, 0.4);
+        --pill-date-bg: rgba(56, 189, 248, 0.12);
+        --pill-date-border: rgba(56, 189, 248, 0.35);
+        --tag-bg: rgba(129, 140, 248, 0.12);
+        --tag-border: rgba(129, 140, 248, 0.3);
+        --tag-text: #c7d2fe;
+      }
+      :root[data-theme="light"] {
+        color-scheme: light;
+        --bg: #f6f8fb;
+        --bg-alt: #edf1f7;
+        --card: #ffffff;
+        --border: #dce4ee;
+        --text: #101a2e;
+        --muted: #5b6b82;
+        --accent: #0284c7;
+        --accent-2: #6366f1;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+        --header-bg: rgba(246, 248, 251, 0.85);
+        --hero-glow: #dbeafe;
+        --pill-bg: rgba(2, 132, 199, 0.1);
+        --pill-border: rgba(2, 132, 199, 0.35);
+        --pill-date-bg: rgba(2, 132, 199, 0.08);
+        --pill-date-border: rgba(2, 132, 199, 0.3);
+        --tag-bg: rgba(99, 102, 241, 0.09);
+        --tag-border: rgba(99, 102, 241, 0.28);
+        --tag-text: #4338ca;
       }
       * {
         margin: 0;
@@ -72,17 +116,19 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(15, 23, 42, 0.85);
+        background: var(--header-bg);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border);
       }
       .nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 20px;
         height: 64px;
       }
       .brand {
+        margin-right: auto;
+        margin-right: auto;
         font-weight: 800;
         font-size: 1.1rem;
         background: var(--grad);
@@ -117,11 +163,48 @@
         cursor: pointer;
         line-height: 1;
       }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .theme-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--text);
+        font-size: 1.05rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .theme-btn:hover {
+        border-color: var(--accent);
+      }
+      .theme-btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .theme-btn .icon-sun,
+      .theme-btn .icon-moon {
+        display: none;
+      }
+      :root[data-theme="dark"] .theme-btn .icon-sun {
+        display: inline;
+      }
+      :root[data-theme="light"] .theme-btn .icon-moon {
+        display: inline;
+      }
 
       .hero {
         padding: 96px 0 72px;
         text-align: center;
-        background: radial-gradient(ellipse at top, #1e3a5f 0%, var(--bg) 60%);
+        background: radial-gradient(ellipse at top, var(--hero-glow) 0%, var(--bg) 60%);
       }
       .hero .avatar {
         width: 120px;
@@ -147,9 +230,9 @@
         margin-top: 12px;
         padding: 6px 18px;
         border-radius: 999px;
-        background: rgba(56, 189, 248, 0.15);
+        background: var(--pill-bg);
         color: var(--accent);
-        border: 1px solid rgba(56, 189, 248, 0.4);
+        border: 1px solid var(--pill-border);
         font-weight: 600;
         font-size: 0.95rem;
       }
@@ -241,9 +324,9 @@
         gap: 8px;
       }
       .tag {
-        background: rgba(129, 140, 248, 0.12);
-        border: 1px solid rgba(129, 140, 248, 0.3);
-        color: #c7d2fe;
+        background: var(--tag-bg);
+        border: 1px solid var(--tag-border);
+        color: var(--tag-text);
         padding: 4px 12px;
         border-radius: 999px;
         font-size: 0.85rem;
@@ -492,8 +575,8 @@
         color: var(--muted);
         font-size: 0.8rem;
         font-weight: 600;
-        background: rgba(56, 189, 248, 0.12);
-        border: 1px solid rgba(56, 189, 248, 0.35);
+        background: var(--pill-date-bg);
+        border: 1px solid var(--pill-date-border);
         padding: 4px 14px;
         border-radius: 999px;
       }
@@ -574,7 +657,6 @@
     <header>
       <nav class="nav container" aria-label="Primary">
         <a class="brand" href="#home">AJ</a>
-        <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -582,6 +664,13 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-actions">
+          <button type="button" class="theme-btn" id="themeBtn" aria-label="Switch theme" title="Switch theme">
+            <span class="icon-sun" aria-hidden="true">&#9728;&#xFE0E;</span>
+            <span class="icon-moon" aria-hidden="true">&#9789;&#xFE0E;</span>
+          </button>
+          <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        </div>
       </nav>
     </header>
 
@@ -1232,6 +1321,38 @@
           behavior: "smooth"
         });
       });
+
+      var themeBtn = document.getElementById("themeBtn");
+
+      function currentTheme() {
+        return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      }
+
+      function updateThemeBtn() {
+        var label = currentTheme() === "light" ? "Switch to dark theme" : "Switch to light theme";
+        themeBtn.setAttribute("aria-label", label);
+        themeBtn.setAttribute("title", label);
+      }
+
+      themeBtn.addEventListener("click", function () {
+        var next = currentTheme() === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (err) {}
+        updateThemeBtn();
+      });
+
+      updateThemeBtn();
+
+      try {
+        window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function (e) {
+          var stored = null;
+          try { stored = localStorage.getItem("theme"); } catch (err) {}
+          if (stored !== "light" && stored !== "dark") {
+            document.documentElement.setAttribute("data-theme", e.matches ? "light" : "dark");
+            updateThemeBtn();
+          }
+        });
+      } catch (err) {}
     </script>
 </body>
 </html>

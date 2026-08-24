@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
     <title>Page Not Found — Amalan Jenicious F</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
       :root {
+        color-scheme: dark;
         --bg: #0f172a;
         --card: #1e293b;
         --border: #334155;
@@ -14,6 +16,19 @@
         --muted: #94a3b8;
         --accent: #38bdf8;
         --grad: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          color-scheme: light;
+          --bg: #f6f8fb;
+          --card: #ffffff;
+          --border: #dce4ee;
+          --text: #101a2e;
+          --muted: #5b6b82;
+          --accent: #0284c7;
+          --shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+        }
       }
       * {
         margin: 0;
@@ -37,7 +52,7 @@
         border-radius: 14px;
         padding: 48px 40px;
         max-width: 420px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        box-shadow: var(--shadow);
       }
       .code {
         font-size: 4rem;
