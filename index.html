@@ -6,9 +6,14 @@
     <meta name="color-scheme" content="dark light">
     <meta
       name="description"
-      content="Amalan Jenicious F — Computer Science Engineer specializing in fullstack development. Portfolio of projects, skills and experience."
+      content="Portfolio of Amalan Jenicious F, Computer Science Engineer and Team Lead in Chennai. Fullstack work with Node.js, React, NestJS, Spring Boot, Angular, TypeScript, and cloud."
     >
-    <title>Amalan Jenicious F | Computer Science Engineer</title>
+    <meta name="author" content="Amalan Jenicious F">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <title>Amalan Jenicious F | Fullstack Engineer &amp; Team Lead</title>
+    <link rel="canonical" href="https://codetoaj.github.io/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +21,85 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     >
-    <meta property="og:title" content="Amalan Jenicious F | Computer Science Engineer">
-    <meta property="og:description" content="Team Lead specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amalan Jenicious F | Fullstack Engineer &amp; Team Lead">
+    <meta property="og:description" content="Computer Science Engineer and Team Lead in Chennai. Fullstack work with Node.js, React, NestJS, Spring Boot, Angular, TypeScript, and cloud.">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Amalan Jenicious F">
     <meta property="og:url" content="https://codetoaj.github.io/">
     <meta property="og:image" content="https://codetoaj.github.io/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Amalan Jenicious F — Team Lead and fullstack engineer in Chennai, India">
+    <meta property="profile:first_name" content="Amalan">
+    <meta property="profile:last_name" content="Jenicious">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Amalan Jenicious F | Computer Science Engineer">
-    <meta name="twitter:description" content="Team Lead specializing in fullstack development — Node.js, React, Spring Boot, Angular, TypeScript, and cloud technologies.">
+    <meta name="twitter:title" content="Amalan Jenicious F | Fullstack Engineer &amp; Team Lead">
+    <meta name="twitter:description" content="Computer Science Engineer and Team Lead in Chennai. Fullstack work with Node.js, React, NestJS, Spring Boot, Angular, TypeScript, and cloud.">
     <meta name="twitter:image" content="https://codetoaj.github.io/og-image.png">
+    <meta name="twitter:image:alt" content="Amalan Jenicious F — Team Lead and fullstack engineer in Chennai, India">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Amalan Jenicious F","jobTitle":"Team Lead","worksFor":{"@type":"Organization","name":"Shenll Technology Solutions"},"url":"https://codetoaj.github.io/","sameAs":["https://github.com/codetoaj"]}
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://codetoaj.github.io/#person",
+          "name": "Amalan Jenicious F",
+          "alternateName": "AJ",
+          "jobTitle": "Team Lead",
+          "description": "Computer Science Engineer and Team Lead specializing in fullstack development with Node.js, React, NestJS, Spring Boot, Angular, TypeScript, and cloud technologies.",
+          "url": "https://codetoaj.github.io/",
+          "email": "mailto:codetoaj@gmail.com",
+          "image": "https://codetoaj.github.io/og-image.png",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Shenll Technology Solutions",
+            "url": "https://www.shenll.com/"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          },
+          "sameAs": ["https://github.com/codetoaj"],
+          "knowsAbout": [
+            "Full stack development",
+            "Node.js",
+            "React",
+            "TypeScript",
+            "NestJS",
+            "Next.js",
+            "Spring Boot",
+            "Angular",
+            "Java",
+            "MongoDB",
+            "AWS"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://codetoaj.github.io/#website",
+          "url": "https://codetoaj.github.io/",
+          "name": "Amalan Jenicious F",
+          "description": "Personal portfolio of Amalan Jenicious F, fullstack engineer and Team Lead in Chennai.",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://codetoaj.github.io/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://codetoaj.github.io/#webpage",
+          "url": "https://codetoaj.github.io/",
+          "name": "Amalan Jenicious F | Fullstack Engineer & Team Lead",
+          "inLanguage": "en",
+          "isPartOf": { "@id": "https://codetoaj.github.io/#website" },
+          "about": { "@id": "https://codetoaj.github.io/#person" },
+          "mainEntity": { "@id": "https://codetoaj.github.io/#person" }
+        }
+      ]
+    }
     </script>
     <script>
       (function () {
@@ -115,6 +188,21 @@
         max-width: 1080px;
         margin: 0 auto;
         padding: 0 24px;
+      }
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -48px;
+        z-index: 200;
+        padding: 8px 16px;
+        background: var(--accent);
+        color: #0f172a;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+      .skip-link:focus {
+        top: 12px;
+        text-decoration: none;
       }
 
       header {
@@ -807,6 +895,7 @@
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#home">Skip to content</a>
     <header>
       <nav class="nav container" aria-label="Primary">
         <a class="brand" href="#home">AJ</a>
@@ -827,18 +916,19 @@
       </nav>
     </header>
 
+    <main id="main">
     <section class="hero" id="home">
       <div class="container">
         <div class="avatar" aria-hidden="true">AJ</div>
         <h1>Amalan Jenicious F</h1>
-        <span class="role">Computer Science Engineer</span>
+        <span class="role">Fullstack Engineer &amp; Team Lead</span>
         <p class="intro">
           Hi, I am a Computer Science Engineer specialized in
           <strong>fullstack development</strong> from Tamil Nadu, India. Currently working as a
           Team Lead at
           <a href="https://www.shenll.com/" target="_blank" rel="noopener noreferrer">Shenll Technology Solutions (P) Ltd</a>
           in Chennai. Please check my
-          <a href="https://github.com/codetoaj?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub Repos</a>
+          <a href="https://github.com/codetoaj?tab=repositories" target="_blank" rel="me noopener noreferrer">GitHub Repos</a>
           and feel free to give a star to projects you find interesting. You can email me at
           <a href="mailto:codetoaj@gmail.com">codetoaj@gmail.com</a>.
         </p>
@@ -1379,7 +1469,7 @@
             <span class="label">Email</span>
             <span class="value">codetoaj@gmail.com</span>
           </a>
-          <a class="contact-card" href="https://github.com/codetoaj" target="_blank" rel="noopener noreferrer">
+          <a class="contact-card" href="https://github.com/codetoaj" target="_blank" rel="me noopener noreferrer">
             <span class="icon">&#128187;</span>
             <span class="label">GitHub</span>
             <span class="value">github.com/codetoaj</span>
@@ -1392,6 +1482,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <footer>
       <div class="container">
